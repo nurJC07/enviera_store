@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Route} from "react-router-dom";
+import Navbar from "./components/Navbar";
+import ProductPage from "./components/ProductPage";
+import Details from "./components/Details";
+import Footer from "./components/Footer";
+import About from "./components/About";
+import Penjual from "./components/Penjual";
+import ProductList from "./components/ProductList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Navbar />
+          {/* <Route exact path="/" component={ManageProduct} /> */}
+          <Route exact path="/product" component={ProductPage} />
+          <Route exact path="/" component={ProductList}/>
+          <Route path="/details" component={Details} />
+          <Route path="/about" component={About}/>
+          <Route path="/penjual" component={Penjual}/>
+        <div>
+        <Footer />
+        </div>
+
+       
+      </div>
+    );
+  }
 }
 
 export default App;
