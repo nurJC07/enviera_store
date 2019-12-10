@@ -3,99 +3,14 @@ import { items, detailProduct } from "./data";
 const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
-//   state = {
-//     products: [],
-//     detailProduct: detailProduct,
-//     modalOpen: false,
-//     modalProduct: detailProduct,
-//     searchListProduct: []
-//   };
-//   componentDidMount() {
-//     this.setProducts();
-//   }
 
-//   setProducts = () => {
-//     let products = [];
-//     storeProducts.forEach(item => {
-//       const singleItem = { ...item };
-//       products = [...products, singleItem];
-//     });
-//     this.setState(() => {
-//       return { products };
-//   })
-//   }
-
-//   getItem = id => {
-//     const product = this.state.products.find(item => item.id === id);
-//     return product;
-//   };
-//   handleDetail = id => {
-//     const product = this.getItem(id);
-//     this.setState(() => {
-//       return { detailProduct: product };
-//     });
-//   };
-
-//   openModal = id => {
-//     const product = this.getItem(id);
-//     this.setState(() => {
-//       return { modalProduct: product, modalOpen: true };
-//     });
-//   };
-//   closeModal = () => {
-//     this.setState(() => {
-//       return { modalOpen: false };
-//     });
-//   };
-
-//   removeItem = id =>{
-//     if(window.confirm('Are you sure to delete?')){
-//       let tempProducts = [...this.state.products];
-//       tempProducts = tempProducts.filter(item => item.id !== id);  
-//        this.setState(()=> {
-//          return {
-//            products: [...tempProducts]
-//          }
-//        })
-//      }
-//     }
-
-//     searchId = (id) => {
-
-//       console.log("lagi nyari ya")
-//       // const product = this.getItem(id);
-//       // var id = this.refs.idSearch
-   
-//       let tempProducts = [...this.state.products];
-//       console.log(arrSearch)
-//       console.log(id)
-//       var arrSearch = this.state.products.filter(item => item.id === id);
-//             this.setState({ 
-//               searchListProduct: arrSearch })   
-// }
-
-//   render() {
-//     return (
-//       <ProductContext.Provider
-//         value={{
-//           ...this.state,
-//           handleDetail: this.handleDetail,
-//           removeItem: this.removeItem,
-//           searchId: this.searchId
-        
-//         }}
-//       >
-//         {this.props.children}
-//       </ProductContext.Provider>
-//     );
-//   }
 state = {
 
   products: [],
   title: "all",
   detailProduct: detailProduct,
   filteredProducts: [],
-   singleProduct: {},
+  singleProduct: {},
 
   search: "",
   price: 0,
